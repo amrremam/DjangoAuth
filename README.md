@@ -1,6 +1,6 @@
 # Bit68 Task
 
-# Running the project
+-Running the project
 
 virtualenv *appName*
 cd *appName*
