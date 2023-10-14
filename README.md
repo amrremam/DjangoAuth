@@ -4,6 +4,7 @@
 
    - "admin-panel": https://bit68.up.railway.app
    - "register": https://bit68.up.railway.app/api/register,
+   - "login": https://bit68.up.railway.app/api/login,
    - "package": https://bit68.up.railway.app/api/package,
    - "subscription": https://bit68.up.railway.app/api/user-subscriptions
 
