@@ -11,8 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = []
-# CSRF_TRUSTED_ORIGINS = ['']
+ALLOWED_HOSTS = ['127.0.0.1','.localhost', 'bit68.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://bit68.up.railway.app"']
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -29,7 +29,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://web-production-1522.up.railway.app",
+    "https://bit68.up.railway.app",
     "https://example.com",
     "https://sub.example.com",
     "http://localhost:8080",
