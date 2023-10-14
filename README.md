@@ -10,8 +10,8 @@
 
 
 ## Admin Panel Access
-   username: admin
-   pass: bit68
+  - username: admin
+  - pass: bit68
 
 
 ## Getting Started
