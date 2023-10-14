@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1','.localhost', 'bit68.up.railway.app']
+ALLOWED_HOSTS = ['http://127.0.0.1:8000','127.0.0.1','.localhost', 'bit68.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://bit68.up.railway.app']
 
 INSTALLED_APPS = [
@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "bit_db",
+        "NAME": "railway",
         "USER": "postgres",
-        "PASSWORD": "leoleoleo",
-        "HOST": "bitdb.calta8yaou3b.us-east-1.rds.amazonaws.com",
-        "PORT": "5432",
+        "PASSWORD": "JOGNWVvuwuzH7rO0Bre6",
+        "HOST": "containers-us-west-109.railway.app",
+        "PORT": "5989",
     }
 }
 
