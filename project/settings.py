@@ -19,6 +19,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'jazzmin',
     'package',
+    'subscription',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +53,13 @@ MIDDLEWARE = [
 ]
 
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
+
+
 
 ROOT_URLCONF = 'project.urls'
 
@@ -81,33 +89,33 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # Default DB
 
-# from dj_database_url import parse as dburl
-# default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-# DATABASES = {
-#     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
-#     }
+from dj_database_url import parse as dburl
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+DATABASES = {
+    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
+    }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Postgres DB
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "bit_db",
-        "USER": "postgres",
-        "PASSWORD": "leoleoleo",
-        "HOST": "bitdb.calta8yaou3b.us-east-1.rds.amazonaws.com",
-        "PORT": "5432",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "bit_db",
+#         "USER": "postgres",
+#         "PASSWORD": "leoleoleo",
+#         "HOST": "bitdb.calta8yaou3b.us-east-1.rds.amazonaws.com",
+#         "PORT": "5432",
+#     }
+# }
 
 
 # Password validation

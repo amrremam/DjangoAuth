@@ -1,5 +1,3 @@
-
-Using Django, Django Rest framework with MYSQL or PostgreSQL database, build a service with the following features:
     - User registration
     - User login
     - Package table in admin panel only
@@ -8,14 +6,10 @@ Using Django, Django Rest framework with MYSQL or PostgreSQL database, build a s
 
 You are requested to:
 
-
-
-
-
-
 1. Create simple Rest APIs endpoints for:
-    - Registration
-    - Login
+    - Registration (DONE)
+    - Login        (DONE)
+
     - Add Package model and show it in admin (product fields are: name, price)
     - Get Packages and the query should:
         - Order by price
@@ -25,22 +19,8 @@ You are requested to:
 
 2. Use linter for your code (ex: flake8).
 
-
-
-
-
-
 3. Add a Readme file containing instructions to run your code
-
 Notes:
-- The deadline for this task is Sunday, 14-10-2023, at 11:59 PM
-- You are only asked to build the Rest APIs endpoints only (no templates). No GUI (no front-end) is required.
-- Upload your code to a public Github repository and send the link of the repository.
-- Use MYSQL or PostgreSQL as your main database.
-
 - Adding simple test cases for your code using pytest or other test framework you familiar with is a plus.
 - Adding nginx configuration and supervisor is a plus.
-- deploying the task on server is a plus.
-- Using docker and docker compose with your application is also a plus.
-
-In case you have any questions, please send an email.
+- deploying the task on server is a plus. Using docker and docker compose with your application is also a plus.
