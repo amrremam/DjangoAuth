@@ -2,11 +2,16 @@
 
 ## RestAPIs Endpoints
 
-   - "admin-panel": https://bit68.up.railway.app
-   - "register": https://bit68.up.railway.app/api/register,
-   - "login": https://bit68.up.railway.app/api/login,
-   - "package": https://bit68.up.railway.app/api/package,
-   - "subscription": https://bit68.up.railway.app/api/user-subscriptions
+   - "Admin Panel": https://bit68.up.railway.app
+   - "Register": https://bit68.up.railway.app/api/register,
+   - "Login": https://bit68.up.railway.app/api/login,
+   - "Package": https://bit68.up.railway.app/api/package,
+   - "Subscription": https://bit68.up.railway.app/api/user-subscriptions
+
+
+## Admin Panel Access
+   username: admin
+   pass: bit68
 
 
 ## Getting Started
