@@ -1,24 +1,21 @@
 from pathlib import Path
 from decouple import config
+from dj_database_url import parse as dburl
+
 import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG')
-
 
 ALLOWED_HOSTS = []
 # CSRF_TRUSTED_ORIGINS = ['']
 
-
 INSTALLED_APPS = [
     'jazzmin',
-    'package',
     'subscription',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -27,8 +24,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders',
 ]
-
 
 CORS_ALLOWED_ORIGINS = [
     "https://web-production-1522.up.railway.app",
@@ -37,8 +35,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:9000"
     ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,14 +48,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
 }
-
-
 
 ROOT_URLCONF = 'project.urls'
 
@@ -79,22 +72,14 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'project.wsgi.application'
-
-
-
-
-
 
 # Default DB
 
-from dj_database_url import parse as dburl
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
     }
-
 
 DATABASES = {
     'default': {
@@ -102,7 +87,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Postgres DB
 
@@ -116,7 +100,6 @@ DATABASES = {
 #         "PORT": "5432",
 #     }
 # }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -136,7 +119,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -148,29 +130,14 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
-
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
 JAZZMIN_SETTINGS = {
     "welcome_sign": "Bit68",
-    
-        # Links to put along the top menu
     "topmenu_links": [
-
         # Url that gets reversed (Permissions can be added)
         {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
 
         # external url that opens in a new window (Permissions can be added)
-        {"name": "Support", "url": "https://neuranexco.com/index.php/contact-us", "new_window": True},
+        {"name": "Support", "url": "https://bit68.com", "new_window": True},
 
         # model admin to link to (Permissions checked against model)
         {"model": "auth.User"},
@@ -180,3 +147,11 @@ JAZZMIN_SETTINGS = {
     ],
     "copyright": "Bit68",
 }
+
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
