@@ -12,7 +12,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['127.0.0.1','.localhost', 'bit68.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://bit68.up.railway.app"']
+CSRF_TRUSTED_ORIGINS = ['https://bit68.up.railway.app']
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -76,30 +76,30 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # Default DB
 
-default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-DATABASES = {
-    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
-    }
+# default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+# DATABASES = {
+#     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
+#     }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Postgres DB
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "bit_db",
-#         "USER": "postgres",
-#         "PASSWORD": "leoleoleo",
-#         "HOST": "bitdb.calta8yaou3b.us-east-1.rds.amazonaws.com",
-#         "PORT": "5432",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "bit_db",
+        "USER": "postgres",
+        "PASSWORD": "leoleoleo",
+        "HOST": "bitdb.calta8yaou3b.us-east-1.rds.amazonaws.com",
+        "PORT": "5432",
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
